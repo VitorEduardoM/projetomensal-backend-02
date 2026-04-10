@@ -1,5 +1,10 @@
+import config.FlyWayConfiguracao;
+import iniciadorSistema.SistemaIniciar;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        FlyWayConfiguracao.migrate();
+        SistemaIniciar sistemaIniciar = new SistemaIniciar();
+        sistemaIniciar.iniciar();
     }
 }
