@@ -38,6 +38,23 @@ public class ControladorServico {
                         servicoService.atualizar(servicoAtualizado);
                     }
                     break;
+                case 4:
+                    System.out.println("\n========== REMOVER SERVIÇO ==========");
+                    servicoService.listarTodos();
+                    Long idRemover = VerificaEntradas.lerLong("ID do serviço a remover: ");
+                    servicoService.remover(idRemover);
+                    break;
+                case 5:
+                    String buscarNome = VerificaEntradas.lerTexto("Digite o nome para buscar: ");
+                    servicoService.buscarPorNome(buscarNome);
+                    break;
+                case 6:
+                    String buscarTipo = VerificaEntradas.lerTexto("Digite o tipo para buscar: ");
+                    servicoService.buscarPorTipo(buscarTipo);
+                    break;
+                case 7:
+                    servicoService.exibirRelatorio();
+                    break;
             }
         }
     }
