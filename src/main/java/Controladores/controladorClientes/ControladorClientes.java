@@ -1,6 +1,6 @@
 package Controladores.controladorClientes;
 
-mport entity.Cliente;
+import entity.Cliente;
 import entity.Cliente;
 import service.cliente.AtualizaCliente;
 import service.cliente.CadastroCliente;
