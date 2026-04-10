@@ -39,6 +39,25 @@ public class ControladorClientes {
                         clienteService.atualizar(clienteAtualizado);
                     }
                     break;
+                case 4:
+                    System.out.println("\n========== REMOVER CLIENTE ==========");
+                    clienteService.listarTodos();
+                    Long idRemover = VerificaEntradas.lerLong("ID do cliente a remover: ");
+                    clienteService.remover(idRemover);
+                    break;
+                case 5:
+                    String buscarNome = VerificaEntradas.lerTexto("Digite o nome para buscar: ");
+                    clienteService.buscarPorNome(buscarNome);
+                    break;
+                case 6:
+                    if (clienteService.verificaClientesCadastrados()){
+                        clienteService.listarTodos();
+                        Long id = VerificaEntradas.lerLong("Digite o ID do cliente: ");
+                        clienteService.exibirClienteComAutomoveis(id);
+                    } else {
+                        System.out.println(CoresTerminal.VERMELHO + "Nenhum cliente cadastrado!");
+                    }
+                    break;
             }
         }
     }
