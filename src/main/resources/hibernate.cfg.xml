@@ -5,14 +5,20 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/silvaPnues</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/dbautocentersilva</property>
         <property name="hibernate.connection.username">postgres</property>
-        <property name="hibernate.connection.password">30102007</property>
+        <property name="hibernate.connection.password">2020</property>
 
-        <property name="hibernate.show_sql">true</property>
-        <property name="hibernate.format_sql">true</property>
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.show_sql">false</property>
+        <property name="hibernate.format_sql">false</property>
+        <property name="hibernate.hbm2ddl.auto">validate</property>
 
-        <mapping class="org.example.models.Produto"/>
+        <mapping class="entity.Cliente"/>
+        <mapping class="entity.Automovel"/>
+        <mapping class="entity.Produto"/>
+        <mapping class="entity.Servico"/>
+        <mapping class="entity.OrdemServico"/>
+        <mapping class="entity.Laudo"/>
     </session-factory>
 </hibernate-configuration>
